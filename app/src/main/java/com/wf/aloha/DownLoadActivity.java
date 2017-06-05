@@ -1,7 +1,9 @@
 package com.wf.aloha;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -189,6 +191,20 @@ public class DownLoadActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+            
+            //打开pdf
+            File downlaodfile = new File(getExternalFilesDir(null) + File.separator + "chip_retrofit3.pdf");
+            if(!downlaodfile.exists()){
+                ToastUtils.showInstance("重新下载文件");
+                return;
+            }
+            //pdf 筛选器
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.fromFile(downlaodfile),"application/pdf");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            //此处不能写筛选器，否则会崩溃ActivityNotFoundException。只能下面startactivity的写法
+//            Intent.createChooser(intent,"select one PDF reader");
+            startActivity(Intent.createChooser(intent,"select pdf reader"));
         }
 
 
