@@ -1,6 +1,7 @@
 package com.wf.aloha;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -11,7 +12,9 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
+import com.github.barteksc.pdfviewer.PDFView;
 import com.wf.aloha.network.NetApi;
 import com.wf.aloha.network.NetService;
 import com.wf.aloha.utils.LogUtils;
@@ -40,6 +43,10 @@ public class DownLoadActivity extends AppCompatActivity {
     private static final int STORAGE_REQUEST = 100;
     @BindView(R.id.pb_download)
     ProgressBar pbDownload;
+    @BindView(R.id.tv_download)
+    TextView tvDownload;
+    @BindView(R.id.pdf_view)
+    PDFView pdfView;
     private String newPath;
 
     @Override
@@ -138,6 +145,7 @@ public class DownLoadActivity extends AppCompatActivity {
             public void onFailure(Call<ResponseBody> call, Throwable t) {
 
             }
+
         });
     }
 
@@ -155,8 +163,8 @@ public class DownLoadActivity extends AppCompatActivity {
         OutputStream outputStream = null;
         byte[] fileReader = new byte[4096];
 
-        long fileSize = body.contentLength();
-        LogUtils.d("-----","filesize="+fileSize);
+        final long fileSize = body.contentLength();
+        LogUtils.d("-----", "filesize=" + fileSize);
         long fileDownloadSize = 0;
         try {
             inputStream = body.byteStream();
@@ -169,7 +177,14 @@ public class DownLoadActivity extends AppCompatActivity {
                 }
                 outputStream.write(fileReader, 0, read);
                 fileDownloadSize += read;
-                pbDownload.setProgress((int) (fileDownloadSize*100/fileSize));
+                pbDownload.setProgress((int) (fileDownloadSize * 100 / fileSize));
+                final long finalFileDownloadSize = fileDownloadSize;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        tvDownload.setText("正在下载...      "+fileSize/1024+"k/"+ finalFileDownloadSize /1024+"k");
+                    }
+                });
             }
             outputStream.flush();
         } catch (FileNotFoundException e) {
@@ -191,20 +206,28 @@ public class DownLoadActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-            
-            //打开pdf
+
+            //1，借助手机app打开pdf
             File downlaodfile = new File(getExternalFilesDir(null) + File.separator + "chip_retrofit3.pdf");
-            if(!downlaodfile.exists()){
+            if (!downlaodfile.exists()) {
                 ToastUtils.showInstance("重新下载文件");
                 return;
             }
             //pdf 筛选器
             Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setDataAndType(Uri.fromFile(downlaodfile),"application/pdf");
+            intent.setDataAndType(Uri.fromFile(downlaodfile), "application/pdf");
             intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
             //此处不能写筛选器，否则会崩溃ActivityNotFoundException。只能下面startactivity的写法
 //            Intent.createChooser(intent,"select one PDF reader");
-            startActivity(Intent.createChooser(intent,"select pdf reader"));
+
+            try {
+                startActivity(Intent.createChooser(intent, "select pdf reader"));
+            } catch (ActivityNotFoundException ex) {
+                ToastUtils.showInstance("Please install a pdf Manager.");
+            }
+            
+            //2，应用第三方插件在app内部打开pdf
+            pdfView.fromFile(downlaodfile).load();
         }
 
 
