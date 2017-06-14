@@ -2,12 +2,13 @@ package com.wf.aloha;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.wf.aloha.utils.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -17,7 +18,7 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.tv_pdf)
+    @BindView(R.id.tv_upload)
     TextView mTvPdf;
     @BindView(R.id.tv_get)
     TextView tvGet;
@@ -29,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.tv_get, R.id.tv_pdf, R.id.tv_post,R.id.tv_rxjava, R.id.tv_download})
+    @OnClick({R.id.tv_get, R.id.tv_upload, R.id.tv_post,R.id.tv_rxjava, R.id.tv_download,R.id.tv_popup})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_get:
                 Intent intent1 = new Intent(this, RetrofitGetActivity.class);
                 startActivity(intent1);
                 break;
-            case R.id.tv_pdf:
-                Intent intent = new Intent(this, LoadPdfActivity.class);
+            case R.id.tv_upload:
+                Intent intent = new Intent(this, UploadActivity.class);
                 startActivity(intent);
                 break;
             case R.id.tv_post:
@@ -52,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent4 = new Intent(this, DownLoadActivity.class);
                 startActivity(intent4);
                 break;
+            case R.id.tv_popup:
+                View rootView = View.inflate(this, R.layout.tv_popupwindow, null);
+                PopupWindow popupWindow = new PopupWindow(rootView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, true);
+                popupWindow.showAtLocation(findViewById(R.id.main_layout), Gravity.CENTER,0,0);
+                break;
+            
         }
     }
 }

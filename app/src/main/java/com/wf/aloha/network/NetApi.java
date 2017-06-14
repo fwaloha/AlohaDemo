@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * 相关的API
@@ -16,7 +17,10 @@ public class NetApi {
     /**
      * HOST地址
      */
-    public static final String BASE_URL = "http://www.egmicro.com/";
+//    测试下载PDF地址
+//    public static final String BASE_URL = "http://www.egmicro.com/";
+    public static final String BASE_URL = "http://www.daokoudai.com/";
+//    public static final String BASE_URL = "http://www.egmicro.com/";
     /**
      * 开发者Key
      */
@@ -67,6 +71,7 @@ public class NetApi {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
         if (isDownload) {

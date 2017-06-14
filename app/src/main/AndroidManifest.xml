@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoadPdfActivity" />
+        <activity android:name=".UploadActivity" />
         <activity android:name=".RetrofitGetActivity" />
         <activity android:name=".RetrofitPostActivity" />
         <activity android:name=".RxJavaActivity" />
