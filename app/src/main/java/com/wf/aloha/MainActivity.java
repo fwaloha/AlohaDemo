@@ -1,5 +1,6 @@
 package com.wf.aloha;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -9,6 +10,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import com.umeng.message.PushAgent;
+import com.wf.aloha.network.Material;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,9 +32,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        
+        PushAgent.getInstance(this).onAppStart();
     }
 
-    @OnClick({R.id.tv_get, R.id.tv_upload, R.id.tv_post,R.id.tv_rxjava, R.id.tv_download,R.id.tv_popup})
+    @OnClick({R.id.tv_get, R.id.tv_upload, R.id.tv_post,R.id.tv_rxjava, R.id.tv_download,R.id.tv_popup,R.id.tv_material,R.id.tv_super_swipe})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_get:
@@ -55,10 +61,18 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.tv_popup:
                 View rootView = View.inflate(this, R.layout.tv_popupwindow, null);
-                PopupWindow popupWindow = new PopupWindow(rootView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, true);
+                PopupWindow popupWindow = new PopupWindow(rootView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
+                popupWindow.setAnimationStyle(R.style.MyPopup_anim_style);
                 popupWindow.showAtLocation(findViewById(R.id.main_layout), Gravity.CENTER,0,0);
                 break;
-            
+            case R.id.tv_material:
+                Intent intent5 = new Intent(this, MaterialActivity.class);
+                startActivity(intent5);
+                break;
+            case R.id.tv_super_swipe:
+                Intent intent6 = new Intent(this, SuperSwipeActivity.class);
+                startActivity(intent6);
+                break;
         }
     }
 }

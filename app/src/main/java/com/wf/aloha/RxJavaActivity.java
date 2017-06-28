@@ -3,8 +3,12 @@ package com.wf.aloha;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
+import com.androidadvance.topsnackbar.TSnackbar;
 import com.wf.aloha.baseview.BaseRecyclerView;
 import com.wf.aloha.bean.AppInfo;
 
@@ -15,6 +19,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -23,6 +28,12 @@ public class RxJavaActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerview)
     BaseRecyclerView mRecyclerView;
+    @BindView(R.id.co_main)
+    CoordinatorLayout coMain;
+    @BindView(R.id.bt)
+    Button bt;
+    @BindView(R.id.ll)
+    LinearLayout ll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +42,13 @@ public class RxJavaActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Observable<List<AppInfo>> listObservable = getListByRxJava();
-        
+
+
+    }
+
+    private void showTopSnackbar() {
+        TSnackbar tSnackbar = TSnackbar.make(ll, "hahahah top", TSnackbar.LENGTH_LONG);
+        tSnackbar.show();
     }
 
     private Observable<List<AppInfo>> getListByRxJava() {
@@ -61,5 +78,10 @@ public class RxJavaActivity extends AppCompatActivity {
             appInfos.add(appInfo);
         }
         return appInfos;
+    }
+
+    @OnClick(R.id.bt)
+    public void onViewClicked() {
+        showTopSnackbar();
     }
 }
