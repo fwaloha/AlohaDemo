@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/gp1">
+        <item
+            android:id="@+id/favorite"
+            android:icon="@mipmap/ic_launcher"
+            android:title="收藏" />
+    </group>
+    <group android:id="@+id/gp2">
+        <item
+            android:id="@+id/wallet"
+            android:icon="@mipmap/ic_launcher"
+            android:title="钱包" />
+    </group>
+    <group android:id="@+id/gp3">
+        <item
+            android:id="@+id/photo"
+            android:icon="@mipmap/ic_launcher"
+            android:title="相册" />
+    </group>
+    <group android:id="@+id/gp4">
+        <item
+            android:id="@+id/file"
+            android:icon="@mipmap/ic_launcher"
+            android:title="文件" />
+    </group>
+    <group android:id="@+id/gp5">
+        <item
+            android:icon="@mipmap/ic_launcher"
+            android:title="文件" />
+    </group>
+    <group android:id="@+id/gp6">
+        <item
+            android:icon="@mipmap/ic_launcher"
+            android:title="文件" />
+    </group>
+    <group android:id="@+id/gp7">
+        <item
+            android:icon="@mipmap/ic_launcher"
+            android:title="文件" />
+    </group>
+    <group android:id="@+id/gp8">
+        <item
+            android:icon="@mipmap/ic_launcher"
+            android:title="文件" />
+    </group>
+    <group android:id="@+id/gp9">
+        <item
+            android:icon="@mipmap/ic_launcher"
+            android:title="文件" />
+    </group>
+
+</menu>

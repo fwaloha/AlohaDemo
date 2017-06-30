@@ -38,7 +38,8 @@
         <activity android:name=".RxJavaActivity" />
         <activity android:name=".DownLoadActivity" />
         <activity android:name=".MaterialActivity" />
-        <activity android:name=".SuperSwipeActivity"></activity>
+        <activity android:name=".SuperSwipeActivity" />
+        <activity android:name=".DrawerActivity"></activity>
     </application>
 
 </manifest>

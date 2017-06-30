@@ -65,19 +65,59 @@ public class MaterialActivity extends AppCompatActivity {
                 return false;
             }
         });
-        //自带返回键的点击监听
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        //自带返回键的点击监听 也可以在onOptionsItemSelected中设置R.id.home
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
-            public void onClick(View v) {
-                finish();
+            public boolean onMenuItemClick(MenuItem item) {
+                
+                switch (item.getItemId()){
+                    case R.id.action_search:
+                        ToastUtils.showInstance("search le");
+                        break;
+                    case R.id.action_share:
+                        ToastUtils.showInstance("share le");
+                        break;
+                    case R.id.action_settings:
+                        ToastUtils.showInstance("setting le");
+                        break;
+                }
+                return true;
             }
         });
-
     }
 
+    /**
+     * 加载toolbar上方右侧按钮
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_material,menu);
+        return true;
+    }
+
+    /**
+     * toolbar item 点击事件 右侧添加的menu点击无效，左侧返回按钮没问题。
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        
+        switch (item.getItemId()){
+            //返回键的监听
+            case android.R.id.home:
+                finish();
+                break;
+        }
         return true;
     }
 

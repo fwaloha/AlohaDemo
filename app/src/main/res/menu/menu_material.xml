@@ -3,20 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_settings"
-        android:icon="@mipmap/ic_launcher"
         android:orderInCategory="100"
-        android:title="settings"
+        android:title="haha"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_share"
-        android:icon="@mipmap/ic_share"
+        android:id="@+id/action_search"
         android:orderInCategory="100"
-        android:title="settings"
+        android:title="查找"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_search"
-        android:icon="@mipmap/ic_share"
+        android:id="@+id/action_share"
         android:orderInCategory="100"
-        android:title="settings"
+        android:title="分享"
         app:showAsAction="ifRoom" />
 </menu>

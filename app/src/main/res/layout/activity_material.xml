@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:toolbar="http://schemas.android.com/tools"
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,24 +11,33 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
         <!--<android.support.design.widget.CollapsingToolbarLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--app:expandedTitleMarginEnd="64dp"-->
-            <!--app:expandedTitleMarginStart="48dp"-->
-            <!--app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
-            <!--android:layout_height="wrap_content">-->
+        <!--android:layout_width="match_parent"-->
+        <!--app:expandedTitleMarginEnd="64dp"-->
+        <!--app:expandedTitleMarginStart="48dp"-->
+        <!--app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
+        <!--android:layout_height="wrap_content">-->
 
-            <!--<ImageView-->
-                <!--app:layout_collapseMode="parallax"-->
-                <!--android:scaleType="centerCrop"-->
-                <!--android:src="@drawable/material_img"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="200dp" />-->
+        <!--<ImageView-->
+        <!--app:layout_collapseMode="parallax"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:src="@drawable/material_img"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="200dp" />-->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways">
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            toolbar:title=""
+            toolbar:titleTextColor="@color/bg_cyan"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/OverflowMenuStyle">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="我是主题" />
         </android.support.v7.widget.Toolbar>
         <!--</android.support.design.widget.CollapsingToolbarLayout>-->
     </android.support.design.widget.AppBarLayout>
@@ -57,9 +67,9 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvToDoList"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"></android.support.v7.widget.RecyclerView>
 
 

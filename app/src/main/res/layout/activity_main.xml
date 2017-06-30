@@ -8,6 +8,16 @@
     tools:context="com.wf.aloha.MainActivity">
 
     <TextView
+        android:id="@+id/tv_draw_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@color/bg_cyan"
+        android:text="Drawerlayout"
+        app:layout_constraintRight_toRightOf="@+id/tv_popup"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_material" />
+
+    <TextView
         android:id="@+id/tv_super_swipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +25,6 @@
         android:padding="8dp"
         android:background="@color/bg_cyan"
         app:layout_constraintBottom_toBottomOf="@+id/tv_material"
-        android:layout_marginBottom="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -34,7 +43,7 @@
         android:id="@+id/tv_popup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="popupwindow"
+        android:text="popup"
         android:padding="8dp"
         android:background="@color/bg_cyan"
         app:layout_constraintRight_toRightOf="@+id/tv_post"
