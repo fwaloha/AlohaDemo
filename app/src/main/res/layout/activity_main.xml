@@ -8,6 +8,18 @@
     tools:context="com.wf.aloha.MainActivity">
 
     <TextView
+        android:id="@+id/tv_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="camera"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_material"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="@color/bg_cyan"
+        app:layout_constraintTop_toBottomOf="@+id/tv_material" />
+
+    <TextView
         android:id="@+id/tv_draw_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
