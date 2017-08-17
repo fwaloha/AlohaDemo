@@ -1,5 +1,6 @@
 package com.wf.aloha.utils;
 
+import android.view.Gravity;
 import android.widget.Toast;
 
 import com.wf.aloha.AppRoot;
@@ -16,6 +17,7 @@ public class ToastUtils {
         if (toast == null) {
             synchronized (ToastUtils.class) {
                 toast = Toast.makeText(AppRoot.getContext(), "", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER,0,0);
             }
         }
         return toast;

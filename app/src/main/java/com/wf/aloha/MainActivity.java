@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         PushAgent.getInstance(this).onAppStart();
     }
 
-    @OnClick({R.id.tv_get, R.id.tv_upload, R.id.tv_post, R.id.tv_rxjava, R.id.tv_download, R.id.tv_popup, R.id.tv_material, R.id.tv_super_swipe,R.id.tv_draw_layout,R.id.tv_camera})
+    @OnClick({R.id.tv_get, R.id.tv_upload, R.id.tv_post, R.id.tv_rxjava, R.id.tv_download, R.id.tv_popup, R.id.tv_material, R.id.tv_super_swipe,R.id.tv_draw_layout,R.id.tv_camera
+    ,R.id.tv_nav})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_get:
@@ -79,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.tv_camera:
                 Intent intent8 = new Intent(this, CameraActivity.class);
                 startActivity(intent8);
+                break;
+            case R.id.tv_nav:
+                Intent intent9 = new Intent(this, LoginActivity.class);
+                startActivity(intent9);
                 break;
         }
     }

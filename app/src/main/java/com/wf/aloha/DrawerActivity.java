@@ -28,6 +28,7 @@ public class DrawerActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
+        //item 图标显示自己本身的颜色，否则全是灰色
         navView.setItemIconTintList(null);
         //左侧布局的点击事件
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -42,7 +43,7 @@ public class DrawerActivity extends AppCompatActivity {
             }
         });
         //隐藏某个menu item
-        navView.getMenu().findItem(R.id.favorite).setVisible(false);
+        navView.getMenu().findItem(R.id.favorite).setVisible(true);
         
         //获取左侧布局头部
         View headerView = navView.getHeaderView(0);
