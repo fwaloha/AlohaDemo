@@ -1,0 +1,6 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/duihao">
+    <target
+        android:name="path_check"
+        android:animation="@animator/check_animator" />
+</animated-vector>

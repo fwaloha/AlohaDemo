@@ -37,6 +37,8 @@ public class MaterialActivity extends AppCompatActivity {
     NestedScrollView nestsv;
     @BindView(R.id.tv)
     TextView tv;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,15 +51,15 @@ public class MaterialActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         toolbar.setTitle("Material");
-        toolbar.setSubtitle("second Titile");
+//        toolbar.setSubtitle("second Titile");
         toolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.mipmap.ic_tre_line);
-        
+
         //使用自带的返回键
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        
+
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -65,19 +67,19 @@ public class MaterialActivity extends AppCompatActivity {
                 return false;
             }
         });
-        //自带返回键的点击监听 也可以在onOptionsItemSelected中设置R.id.home
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
+//        自带返回键的点击监听 也可以在onOptionsItemSelected中设置R.id.home
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                
-                switch (item.getItemId()){
+
+                switch (item.getItemId()) {
                     case R.id.action_search:
                         ToastUtils.showInstance("search le");
                         break;
@@ -95,24 +97,26 @@ public class MaterialActivity extends AppCompatActivity {
 
     /**
      * 加载toolbar上方右侧按钮
+     *
      * @param menu
      * @return
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_material,menu);
+        getMenuInflater().inflate(R.menu.menu_material, menu);
         return true;
     }
 
     /**
      * toolbar item 点击事件 右侧添加的menu点击无效，左侧返回按钮没问题。
+     *
      * @param item
      * @return
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        
-        switch (item.getItemId()){
+
+        switch (item.getItemId()) {
             //返回键的监听
             case android.R.id.home:
                 finish();
@@ -120,12 +124,12 @@ public class MaterialActivity extends AppCompatActivity {
         }
         return true;
     }
-
-    @OnClick({R.id.toolbar, R.id.floatingbt, R.id.bt})
+//
+    @OnClick({R.id.toolbar, R.id.floatingbt, R.id.bt,R.id.tv_title})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.toolbar:
-                finish();
+//                finish();
                 break;
             case R.id.bt:
                 //snackbar 操作 改变背景颜色及文字颜色及简单点击事件
@@ -147,7 +151,9 @@ public class MaterialActivity extends AppCompatActivity {
                 TSnackbar tSnackbar = TSnackbar.make(nestsv, "top snackbar", TSnackbar.LENGTH_LONG);
                 tSnackbar.show();
                 break;
-
+            case R.id.tv_title:
+                ToastUtils.showInstance("hahahha title");
+                break;
         }
     }
 
@@ -160,4 +166,5 @@ public class MaterialActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
     }
+
 }
