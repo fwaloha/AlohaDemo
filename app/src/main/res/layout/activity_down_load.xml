@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wf.aloha.DownLoadActivity">
+    tools:context="com.wf.aloha.ui.DownLoadActivity">
 
     <TextView
         android:id="@+id/tv_download"

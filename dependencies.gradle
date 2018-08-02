@@ -1,0 +1,12 @@
+ext {
+    COMPILE_SDK_VERSION = 25
+    BUILD_TOOLS_VERSION = '25.0.0'
+    MIN_SDK_VERSION = 16
+    TARGET_SDK_VERSION = 19
+
+    SUPPORT_VERSION = '23.0.2'
+    SUPPORTDEPS = [
+            supportV4 : "com.android.support:support-v4:${SUPPORT_VERSION}",
+            supportV13: "com.android.support:support-v13:${SUPPORT_VERSION}"
+    ]
+}

@@ -36,46 +36,49 @@
             android:name="UMENG_MESSAGE_SECRET"
             android:value="aa5ae782ba2e5be3c12edbaa23e7dfbd" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             </intent-filter>
         </activity>
+
         <activity-alias
             android:name=".iconold"
+            android:enabled="true"
             android:icon="@mipmap/ic_launcher"
             android:label="aloha"
-            android:enabled="true"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".ui.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"></action>
-                <category android:name="android.intent.category.LAUNCHER"></category>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
         <activity-alias
             android:name=".icon1"
+            android:enabled="false"
             android:icon="@mipmap/ic_plus"
             android:label="testapp"
-            android:enabled="false"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".ui.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"></action>
-                <category android:name="android.intent.category.LAUNCHER"></category>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        
-        <activity android:name=".UploadActivity" />
-        <activity android:name=".RetrofitGetActivity" />
-        <activity android:name=".RetrofitPostActivity" />
-        <activity android:name=".RxJavaActivity" />
-        <activity android:name=".DownLoadActivity" />
-        <activity android:name=".MaterialActivity" />
-        <activity android:name=".SuperSwipeActivity" />
-        <activity android:name=".DrawerActivity" />
+
+        <activity android:name=".ui.UploadActivity" />
+        <activity android:name=".ui.RetrofitGetActivity" />
+        <activity android:name=".ui.RetrofitPostActivity" />
+        <activity android:name=".ui.RxJavaActivity" />
+        <activity android:name=".ui.DownLoadActivity" />
+        <activity android:name=".ui.MaterialActivity" />
+        <activity android:name=".ui.SuperSwipeActivity" />
+        <activity android:name=".ui.DrawerActivity" />
         <activity
-            android:name=".CameraActivity"
+            android:name=".ui.CameraActivity"
             android:screenOrientation="landscape" />
 
         <!-- 24及以上 FileUriExposedException -->
@@ -90,14 +93,14 @@
         </provider>
 
         <activity
-            android:name=".NavActivity"
+            android:name=".ui.NavActivity"
             android:label="@string/title_activity_nav"
             android:theme="@style/AppTheme" />
-        <activity android:name=".CanvasActivity" />
+        <activity android:name=".ui.CanvasActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".ViewStubActivity" />
+        <activity android:name=".ui.ViewStubActivity" />
 
         <receiver android:name=".SMSReceiver">
             <intent-filter android:priority="1000">
@@ -105,10 +108,35 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".TestActivity" />
-        <activity android:name=".CanvasDrawActivity" />
-        <activity android:name=".FingerActivity" />
-        <activity android:name=".IconActivity"></activity>
+        <activity android:name=".ui.TestActivity" />
+        <activity android:name=".ui.CanvasDrawActivity" />
+        <activity android:name=".ui.FingerActivity" />
+        <activity android:name=".ui.IconActivity" />
+        <activity android:name=".ui.KotlinActivity" />
+        <activity android:name=".ui.CatchKTActivity" />
+        <activity android:name=".Tactivity" />
+        <activity
+            android:name=".ui.TempActivity"
+            android:process=":remote" />
+
+        <!-- <receiver android:name=".broadcastReceiver.TimeReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.TIME_SET"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <service android:name=".service.MyintentService" />
+
+        <activity android:name=".ui.DialogFrgmtActivity" />
+
+        <service
+            android:name=".AddService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.AttrDefineActivity" />
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".ui.RadioActivity" />
+        <activity android:name=".ui.RtfTestActivity"></activity>
     </application>
 
 </manifest>

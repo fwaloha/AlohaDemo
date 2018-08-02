@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide;
  * Created by wangfei on 2017/6/27.
  */
 
-class GifHeaderMng {
+public class GifHeaderMng {
     private final Context mContext;
     private ImageView gif1;
     private ImageView gif2;

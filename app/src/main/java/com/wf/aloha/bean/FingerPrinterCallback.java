@@ -3,7 +3,7 @@ package com.wf.aloha.bean;
 import android.os.Handler;
 import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 
-import com.wf.aloha.FingerActivity;
+import com.wf.aloha.ui.FingerActivity;
 
 /**
  * Created by baniel on 7/21/16.

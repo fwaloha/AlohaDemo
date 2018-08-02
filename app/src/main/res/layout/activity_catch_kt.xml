@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wf.aloha.ui.CatchKTActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_catch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="16dp"
+            android:text="清理缓存" />
+
+        <TextView
+            android:id="@+id/tv_catch"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="0Mb" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

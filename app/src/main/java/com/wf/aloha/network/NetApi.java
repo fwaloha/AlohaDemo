@@ -6,7 +6,6 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -63,14 +62,14 @@ public class NetApi {
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         Retrofit downlaod_retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .client(client)
                 .callbackExecutor(executorService)
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

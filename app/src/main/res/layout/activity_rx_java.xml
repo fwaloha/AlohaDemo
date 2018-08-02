@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.wf.aloha.RxJavaActivity">
+    tools:context="com.wf.aloha.ui.RxJavaActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -29,6 +29,11 @@
 
         <Button
             android:id="@+id/bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/bt_rx"
+            android:text="rxjava"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

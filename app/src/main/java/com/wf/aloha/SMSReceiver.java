@@ -1,17 +1,13 @@
 package com.wf.aloha;
 
-import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.telephony.SmsMessage;
 import android.text.TextUtils;
 
-import com.wf.aloha.utils.ToastUtils;
+import com.wf.aloha.ui.ViewStubActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
