@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/release/drawable/seek_line.xml",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/src/main/res/drawable/seek_line.xml"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/release/drawable/seek_thumb.xml",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/src/main/res/drawable/seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/release/drawable/button.xml",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/src/main/res/drawable/button.xml"
+    }
+]

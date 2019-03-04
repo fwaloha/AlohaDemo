@@ -10,9 +10,6 @@ class CatchKTActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catch_kt)
-
-        val mTvCatch = findViewById(R.id.tv_catch)
-        val mLlCatch = findViewById(R.id.ll_catch)
         
 //        val size = getDirSize()
     }

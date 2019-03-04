@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MsgListActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rec_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/et_left"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/bt_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/et_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="left"
+        app:layout_constraintBottom_toTopOf="@id/bt_left"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/bt_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <EditText
+        android:id="@+id/et_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="right"
+        app:layout_constraintBottom_toTopOf="@id/bt_right"
+        app:layout_constraintRight_toRightOf="parent" />
+</android.support.constraint.ConstraintLayout>

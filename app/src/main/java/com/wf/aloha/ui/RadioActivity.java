@@ -6,10 +6,8 @@ import android.support.constraint.Guideline;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.wf.aloha.BaseActivity;
 import com.wf.aloha.R;
 
 import butterknife.BindView;

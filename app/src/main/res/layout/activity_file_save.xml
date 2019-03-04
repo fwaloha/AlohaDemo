@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.FileSaveActivity">
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:hint="input anything"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_input" />
+
+    <Button
+        android:id="@+id/bt_sqlite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sqlite"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_save" />
+
+    <Button
+        android:id="@+id/bt_add_sql"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add sql"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_sqlite" />
+
+    <Button
+        android:id="@+id/bt_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="update_sql"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_add_sql" />
+
+    <Button
+        android:id="@+id/bt_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="query_sql"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_update" />
+</android.support.constraint.ConstraintLayout>

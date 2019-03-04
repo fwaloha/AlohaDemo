@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bar="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Test2Activity">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="space_between"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.wf.aloha.baseclass.BaseTitlebar
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        bar:title="haha"></com.wf.aloha.baseclass.BaseTitlebar>
+
+    <Button
+        android:id="@+id/bt_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="Share"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fl" />
+
+    <Button
+        android:id="@+id/bt_notify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notify"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_share" />
+
+    <Button
+        android:id="@+id/bt_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cancel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_notify" />
+
+    <Button
+        android:id="@+id/bt_otheract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="open dkd"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_cancel" />
+
+    <Button
+        android:id="@+id/bt_sh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sharedpreference"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_otheract" />
+
+    <Button
+        android:id="@+id/bt_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="other"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_sh" />
+
+    <Button
+        android:id="@+id/bt_broadtcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="broadcast"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_other" />
+
+    <Button
+        android:id="@+id/bt_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save file"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_broadtcast" />
+</android.support.constraint.ConstraintLayout>

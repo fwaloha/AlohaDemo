@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.liulishuo.filedownloader.FileDownloader;
-import com.umeng.message.IUmengRegisterCallback;
-import com.umeng.message.PushAgent;
+import com.tencent.bugly.crashreport.CrashReport;
+//import com.umeng.message.IUmengRegisterCallback;
+//import com.umeng.message.PushAgent;
 
 /**
  * Created by wangfei on 2017/6/1.
@@ -28,24 +29,25 @@ public class AppRoot extends Application {
         super.onCreate();
         mContext = getApplicationContext();
 
+        initCrash();
         //为了使用第三方封装的retrofit下载控件。
         FileDownloader.init(getApplicationContext());
 
-        PushAgent mPushAgent = PushAgent.getInstance(this);
-//注册推送服务，每次调用register方法都会回调该接口
-        mPushAgent.register(new IUmengRegisterCallback() {
-
-            @Override
-            public void onSuccess(String deviceToken) {
-                //注册成功会返回device token
-                Log.d("-----","device token:"+deviceToken);
-            }
-
-            @Override
-            public void onFailure(String s, String s1) {
-
-            }
-        });
+//        PushAgent mPushAgent = PushAgent.getInstance(this);
+////注册推送服务，每次调用register方法都会回调该接口
+//        mPushAgent.register(new IUmengRegisterCallback() {
+//
+//            @Override
+//            public void onSuccess(String deviceToken) {
+//                //注册成功会返回device token
+//                Log.d("-----","device token:"+deviceToken);
+//            }
+//
+//            @Override
+//            public void onFailure(String s, String s1) {
+//
+//            }
+//        });
         
 //        UmengNotificationClickHandler notificationClickHandler = new UmengNotificationClickHandler() {
 //            @Override
@@ -58,11 +60,15 @@ public class AppRoot extends Application {
         registerActivityLifecycleCallbacks();
     }
 
+    private void initCrash() {
+        CrashReport.initCrashReport(getApplicationContext(),"aa5f1a25a1",true);
+    }
+
     private void registerActivityLifecycleCallbacks() {
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-                PushAgent.getInstance(activity).onAppStart();
+//                PushAgent.getInstance(activity).onAppStart();
             }
 
             @Override

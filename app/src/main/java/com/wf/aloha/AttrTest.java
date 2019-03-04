@@ -27,7 +27,7 @@ public class AttrTest extends LinearLayout {
 
         LayoutInflater.from(context).inflate(R.layout.test_attr_layout, this, true);
 
-        tvText.setText("hahaha this is attr tools");
+        tvText.setText("hahaha this is attr.xml tools");
 
 //        //处理自定义属性。TODO 未成功 使用会崩溃
         TypedArray attrArray = context.obtainStyledAttributes(attrs, R.styleable.AttrTest);

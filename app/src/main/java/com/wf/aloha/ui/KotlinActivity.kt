@@ -1,8 +1,8 @@
 package com.wf.aloha.ui
 
 import android.content.Context
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
@@ -10,13 +10,11 @@ import android.widget.Toast
 import com.wf.aloha.*
 import com.wf.aloha.utils.LogUtils
 import com.wf.aloha.utils.ToastUtils
-import junit.framework.Assert.*
-import java.security.acl.Group
 import kotlinx.android.synthetic.main.activity_kotlin.*
 import org.jetbrains.anko.async
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.uiThread
-import kotlin.collections.ArrayList
+import java.security.acl.Group
 import kotlin.reflect.KProperty
 
 class KotlinActivity : AppCompatActivity() {
@@ -112,7 +110,7 @@ class KotlinActivity : AppCompatActivity() {
 //        assertFalse(listOf.any { it < 9 })
 //        assertEquals(1, listOf.count { it > 8 })
         val fold = listOf.fold(4) { total, next -> total + next }
-        assertEquals(25, listOf.fold(4) { total, next -> total + next })
+//        assertEquals(25, listOf.fold(4) { total, next -> total + next })
         listOf.maxBy { -it }
 //        listOf.max()
 //        listOf.min()

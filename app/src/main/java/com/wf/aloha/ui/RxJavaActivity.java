@@ -24,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,6 +41,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.schedulers.Schedulers;
+import io.reactivex.subjects.Subject;
 
 public class RxJavaActivity extends AppCompatActivity {
 
@@ -79,6 +81,7 @@ public class RxJavaActivity extends AppCompatActivity {
                     @Override
                     public void onSubscribe(Disposable d) {
                         LogUtils.d("-----rx", "begin....");
+
                     }
 
                     @Override
@@ -105,11 +108,112 @@ public class RxJavaActivity extends AppCompatActivity {
                     }
                 });
 
+        //1-1种，快速创建被观察者
+        Observable.just(1, 2, 3)
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+        //1-2种，快速发送被观察者
+        Integer[] it = {1, 2, 3, 4};
+        Observable.fromArray(it)
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+        //1-3 fromIterable
+        // 1. 设置一个集合
+//        List<Integer> list = new ArrayList<>();
+//        list.add(1);
+//        list.add(2);
+//        list.add(3);
+        // 2. 通过fromIterable()将集合中的对象 / 数据发送出去
+//        Observable.fromIterable(list)
+//                .subscribe
+        //1-4 defer 延迟创建被观察者，只有开始订阅的时候才创建Observable
+//           <-- 1. 第1次对i赋值 ->>
+//                Integer i = 10;
+//
+//        // 2. 通过defer 定义被观察者对象
+//        // 注：此时被观察者对象还没创建
+//        Observable<Integer> observable = Observable.defer(new Callable<ObservableSource<? extends Integer>>() {
+//            @Override
+//            public ObservableSource<? extends Integer> call() throws Exception {
+//                return Observable.just(i);
+//            }
+//        });
+//
+//        <-- 2. 第2次对i赋值 ->>
+//                i = 15;
+//
+//        <-- 3. 观察者开始订阅 ->>
+//                // 注：此时，才会调用defer（）创建被观察者对象（Observable）
+//                observable.subscribe(new Observer<Integer>() {
+
+
+        Observable.timer(2, TimeUnit.SECONDS)
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+                        LogUtils.d("-----onnext", "--" + aLong);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
         //2种，背压式，
         Flowable.create(new FlowableOnSubscribe<String>() {
             @Override
             public void subscribe(FlowableEmitter<String> e) throws Exception {
 
+                long requested = e.requested();
                 e.onNext("d");
                 e.onNext("e");
                 e.onNext("f");
@@ -141,6 +245,59 @@ public class RxJavaActivity extends AppCompatActivity {
                     }
                 });
 
+        Flowable.create(new FlowableOnSubscribe<String>() {
+            @Override
+            public void subscribe(FlowableEmitter<String> e) throws Exception {
+                e.onNext("haha");
+            }
+        }, BackpressureStrategy.ERROR).observeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onSubscribe(Subscription s) {
+                        s.request(2);
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+        Flowable.interval(1, TimeUnit.MILLISECONDS)
+                .onBackpressureBuffer()
+                .observeOn(Schedulers.newThread())
+                .subscribe(new Subscriber<Long>() {
+                    @Override
+                    public void onSubscribe(Subscription s) {
+
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 
     private void showTopSnackbar() {
@@ -166,9 +323,9 @@ public class RxJavaActivity extends AppCompatActivity {
         return appInfos;
     }
 
-    @OnClick({R.id.bt,R.id.bt_rx})
+    @OnClick({R.id.bt, R.id.bt_rx})
     public void onViewClicked(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.bt:
                 showTopSnackbar();
                 break;

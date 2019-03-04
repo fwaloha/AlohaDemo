@@ -22,6 +22,7 @@ public class ToastUtils {
         }
         return toast;
     }
+    
     public static void showInstance(String str) {
         getInstance();
         toast.setText(str);

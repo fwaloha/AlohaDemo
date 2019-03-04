@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/release/drawable-xxxhdpi-v4/ic_zoom_out_map_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/release/drawable-xxxhdpi/ic_zoom_out_map_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/release/drawable-xxxhdpi-v4/ic_close_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/release/drawable-xxxhdpi/ic_close_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/release/drawable-xxxhdpi-v4/ic_format_size_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/release/drawable-xxxhdpi/ic_format_size_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/release/drawable-xxxhdpi-v4/ic_search_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/release/drawable-xxxhdpi/ic_search_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/release/drawable-xxxhdpi-v4/ic_chevron_right_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/release/drawable-xxxhdpi/ic_chevron_right_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/release/drawable-xxxhdpi-v4/ic_toc_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/release/drawable-xxxhdpi/ic_toc_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/release/drawable-xxxhdpi-v4/ic_chevron_left_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/release/drawable-xxxhdpi/ic_chevron_left_white_24dp.png"
+    }
+]

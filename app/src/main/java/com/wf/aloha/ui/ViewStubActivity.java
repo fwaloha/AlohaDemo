@@ -50,7 +50,7 @@ public class ViewStubActivity extends AppCompatActivity {
         }
     }
 
-    /**
+        /**
      * 动态权限检查
      */
     @Override

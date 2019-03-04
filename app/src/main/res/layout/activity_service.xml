@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ServiceActivity">
+
+    <Button
+        android:id="@+id/bt_start_servce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="start"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_stop_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="stop"
+        app:layout_constraintLeft_toRightOf="@id/bt_start_servce"
+        app:layout_constraintRight_toLeftOf="@id/bt_bind"
+        app:layout_constraintTop_toTopOf="@id/bt_start_servce" />
+
+    <Button
+        android:id="@+id/bt_bind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bind"
+        app:layout_constraintBottom_toBottomOf="@id/bt_start_servce"
+        app:layout_constraintLeft_toRightOf="@id/bt_stop_service"
+        app:layout_constraintRight_toLeftOf="@id/bt_unbind" />
+
+    <Button
+        android:id="@+id/bt_unbind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="unbind"
+        app:layout_constraintBottom_toBottomOf="@id/bt_start_servce"
+        app:layout_constraintRight_toRightOf="parent" />
+</android.support.constraint.ConstraintLayout>

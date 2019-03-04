@@ -23,8 +23,8 @@
         android:id="@+id/tv_viewstub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
         android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
         android:background="@color/bg_cyan"
         android:padding="8dp"
         android:text="ViewStub"
@@ -149,8 +149,8 @@
         android:id="@+id/tv_upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:background="@color/bg_cyan"
         android:clickable="true"
@@ -163,11 +163,11 @@
         android:id="@+id/tv_drawable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="0dp"
         android:background="@color/bg_cyan"
         android:clickable="true"
         android:padding="8dp"
@@ -182,9 +182,9 @@
         android:id="@+id/tv_finger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
         android:background="@color/bg_cyan"
         android:clickable="true"
         android:padding="8dp"
@@ -244,8 +244,8 @@
         android:id="@+id/tv_attr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:background="@color/bg_cyan"
         android:clickable="true"
@@ -266,4 +266,106 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/tv_attr" />
+
+    <TextView
+        android:id="@+id/kotlin_recyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:background="@color/bg_cyan"
+        android:clickable="true"
+        android:padding="8dp"
+        android:text="kotlin_recy"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_audio" />
+
+    <TextView
+        android:id="@+id/tv_permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/bg_cyan"
+        android:clickable="true"
+        android:padding="8dp"
+        android:text="permission"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_attr" />
+
+    <TextView
+        android:id="@+id/tv_content_resolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:background="@color/bg_cyan"
+        android:clickable="true"
+        android:padding="8dp"
+        android:text="content_resolver"
+        app:layout_constraintLeft_toRightOf="@id/tv_permission"
+        app:layout_constraintTop_toTopOf="@id/tv_permission" />
+
+    <TextView
+        android:id="@+id/tv_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:background="@color/bg_cyan"
+        android:padding="8dp"
+        android:text="notification"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_permission" />
+
+    <TextView
+        android:id="@+id/tv_capture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/bg_cyan"
+        android:padding="8dp"
+        android:text="capture"
+        app:layout_constraintLeft_toLeftOf="@id/tv_permission"
+        app:layout_constraintTop_toBottomOf="@id/tv_permission" />
+
+    <TextView
+        android:id="@+id/tv_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_cyan"
+        android:padding="8dp"
+        android:text="video"
+        app:layout_constraintBottom_toBottomOf="@id/tv_capture"
+        app:layout_constraintLeft_toLeftOf="@id/tv_audio" />
+
+    <TextView
+        android:id="@+id/tv_net"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:background="@color/bg_cyan"
+        android:padding="8dp"
+        android:text="net"
+        app:layout_constraintBottom_toBottomOf="@id/tv_video"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/thread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/bg_cyan"
+        android:padding="8dp"
+        android:text="thread UI"
+        app:layout_constraintLeft_toLeftOf="@id/tv_capture"
+        app:layout_constraintTop_toBottomOf="@id/tv_capture" />
+
+    <TextView
+        android:id="@+id/tv_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_cyan"
+        android:padding="8dp"
+        android:text="Service"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/thread" />
 </android.support.constraint.ConstraintLayout>

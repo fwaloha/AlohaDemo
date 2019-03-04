@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_format_size_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/debug/drawable-hdpi/ic_format_size_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_toc_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/debug/drawable-hdpi/ic_toc_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_close_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/debug/drawable-hdpi/ic_close_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_zoom_out_map_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/debug/drawable-hdpi/ic_zoom_out_map_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_chevron_left_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/debug/drawable-hdpi/ic_chevron_left_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_chevron_right_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/debug/drawable-hdpi/ic_chevron_right_white_24dp.png"
+    },
+    {
+        "merged": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_search_white_24dp.png",
+        "source": "/Users/wangfei/Desktop/mupdf-android-viewer-mini/lib/build/generated/res/pngs/debug/drawable-hdpi/ic_search_white_24dp.png"
+    }
+]

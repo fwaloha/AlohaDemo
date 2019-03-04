@@ -2,13 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wf.aloha">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -20,6 +19,7 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name=".AppRoot"
@@ -29,6 +29,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.ServiceActivity"></activity>
+        <activity android:name=".ui.ThreadUIActivity" />
+        <activity android:name=".ui.NetActivity" />
+        <activity
+            android:name=".ui.VideoActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation" />
+        <activity android:name=".ui.CaptureActivity" />
+        <activity android:name=".ui.NotifiActivity" />
+
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="5940ad6aaed17966cb000895" />
@@ -45,18 +54,6 @@
         </activity>
 
         <activity-alias
-            android:name=".iconold"
-            android:enabled="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="aloha"
-            android:targetActivity=".ui.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity-alias>
-        <activity-alias
             android:name=".icon1"
             android:enabled="false"
             android:icon="@mipmap/ic_plus"
@@ -68,9 +65,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+        <activity-alias
+            android:name=".iconold"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="aloha"
+            android:targetActivity=".ui.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".ui.UploadActivity" />
-        <activity android:name=".ui.RetrofitGetActivity" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity
+            android:name=".ui.UploadActivity"
+            android:process="com.wf.aloha.remote" />
+        <activity
+            android:name=".ui.RetrofitGetActivity"
+            android:process=":remote" />
         <activity android:name=".ui.RetrofitPostActivity" />
         <activity android:name=".ui.RxJavaActivity" />
         <activity android:name=".ui.DownLoadActivity" />
@@ -79,9 +92,7 @@
         <activity android:name=".ui.DrawerActivity" />
         <activity
             android:name=".ui.CameraActivity"
-            android:screenOrientation="landscape" />
-
-        <!-- 24及以上 FileUriExposedException -->
+            android:screenOrientation="landscape" /> <!-- 24及以上 FileUriExposedException -->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -117,9 +128,7 @@
         <activity android:name=".Tactivity" />
         <activity
             android:name=".ui.TempActivity"
-            android:process=":remote" />
-
-        <!-- <receiver android:name=".broadcastReceiver.TimeReceiver"> -->
+            android:process=":remote" /> <!-- <receiver android:name=".broadcastReceiver.TimeReceiver"> -->
         <!-- <intent-filter> -->
         <!-- <action android:name="android.intent.action.TIME_SET"/> -->
         <!-- </intent-filter> -->
@@ -134,9 +143,56 @@
             android:exported="true" />
 
         <activity android:name=".ui.AttrDefineActivity" />
-        <activity android:name=".BaseActivity" />
         <activity android:name=".ui.RadioActivity" />
-        <activity android:name=".ui.RtfTestActivity"></activity>
+        <activity android:name=".ui.RtfTestActivity" />
+        <activity android:name=".ui.WebviewDemoActivity" />
+        <activity android:name=".ui.WebviewTempActivity" />
+        <activity android:name=".ViewActivity" />
+        <activity android:name=".ui.ComListActivity" />
+        <activity android:name=".ui.KotlinRecyActivity" />
+        <activity android:name=".ui.Test2Activity" /> <!-- android:theme="@style/Theme.AppCompat.Dialog" -->
+        <activity
+            android:name=".ui.HideActivity"
+            android:launchMode="standard">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- <category android:name="com.dd.MY_CAT"/> -->
+                <data android:scheme="https" />
+                <!-- <data android:scheme="https"/> -->
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.MsgListActivity" />
+        <activity android:name=".ui.FragActivity" />
+        <activity android:name=".ui.BroadcastActivity" />
+
+        <receiver
+            android:name=".broadcastReceiver.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver> <!-- <receiver -->
+        <!-- android:name=".broadcastReceiver.MyReceiver" -->
+        <!-- android:enabled="true" -->
+        <!--  -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter android:priority="100"> -->
+        <!-- <action android:name="com.wf.aloha.mybroadcast"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <activity android:name=".ui.FileSaveActivity" />
+        <activity android:name=".ui.PermissionActivity" />
+        <activity android:name=".ui.ResolverActivity" />
+
+        <provider
+            android:name=".view.DataProvider"
+            android:authorities="com.wf.aloha.provider"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

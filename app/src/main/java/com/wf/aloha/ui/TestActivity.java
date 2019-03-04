@@ -1,5 +1,7 @@
 package com.wf.aloha.ui;
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -39,6 +41,9 @@ public class TestActivity extends AppCompatActivity implements CheckAdapter.Chec
         checkedList = new ArrayList<>();
         initDatas();
         initViews();
+
+        NotificationManager manager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        
     }
 
     private void initViews() {

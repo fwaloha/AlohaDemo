@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.wf.aloha.R;
 import com.wf.aloha.network.NetApi;
-import com.wf.aloha.network.NetService;
+import com.wf.aloha.network.NetServiceInterface;
 import com.wf.aloha.utils.LogUtils;
 import com.wf.aloha.utils.ToastUtils;
 
@@ -130,7 +130,7 @@ public class DownLoadActivity extends AppCompatActivity {
     //自己使用retrofit下载
     private void doDownLoad() {
         NetApi api = NetApi.getDownloadApi();
-        NetService service = api.getService();
+        NetServiceInterface service = api.getService();
         final Call<ResponseBody> call = service.downloadFile();
 
         call.enqueue(new Callback<ResponseBody>() {

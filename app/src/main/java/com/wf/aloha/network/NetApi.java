@@ -45,7 +45,7 @@ public class NetApi {
         private static NetApi downloadApi = new NetApi(true);
     }
 
-    private NetService service;
+    private NetServiceInterface service;
 
     protected NetApi(boolean isDownload) {
 
@@ -62,21 +62,21 @@ public class NetApi {
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         Retrofit downlaod_retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)
                 .callbackExecutor(executorService)
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
         if (isDownload) {
-            service = downlaod_retrofit.create(NetService.class);
+            service = downlaod_retrofit.create(NetServiceInterface.class);
         } else {
-            service = retrofit.create(NetService.class);
+            service = retrofit.create(NetServiceInterface.class);
         }
     }
 
@@ -85,7 +85,7 @@ public class NetApi {
      *
      * @return
      */
-    public NetService getService() {
+    public NetServiceInterface getService() {
         return service;
     }
 }
