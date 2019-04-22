@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        
+        <item android:id="@+id/it1"
+            android:icon="@mipmap/ic_launcher"
+            android:title="phone"/>
+        <item android:id="@+id/it2"
+            android:icon="@mipmap/ic_launcher"
+            android:title="setting"/>
+        <item android:id="@+id/it3"
+            android:icon="@mipmap/ic_launcher"
+            android:title="email"/>
+        <item android:id="@+id/it4"
+            android:icon="@mipmap/ic_launcher"
+            android:title="haha"/>
+        <item android:id="@+id/it5"
+            android:icon="@mipmap/ic_launcher"
+            android:title="keke"/>
+    </group>
+</menu>

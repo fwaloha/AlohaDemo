@@ -26,17 +26,40 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:resizeableActivity="false"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ServiceActivity"></activity>
+        <service
+            android:name=".service.AlermService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".ui.ToolbarActivity" />
+
+        <service
+            android:name=".service.DownloadService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.DownloadServiceActivity" />
+
+        <service
+            android:name=".service.IntentServiceDemo"
+            android:exported="false" />
+        <service
+            android:name=".service.ServiceDemo"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.ServiceActivity" />
         <activity android:name=".ui.ThreadUIActivity" />
         <activity android:name=".ui.NetActivity" />
         <activity
             android:name=".ui.VideoActivity"
             android:configChanges="screenSize|keyboardHidden|orientation" />
         <activity android:name=".ui.CaptureActivity" />
-        <activity android:name=".ui.NotifiActivity" />
+        <activity android:name=".ui.NotifiActivity"/>
 
         <meta-data
             android:name="UMENG_APPKEY"

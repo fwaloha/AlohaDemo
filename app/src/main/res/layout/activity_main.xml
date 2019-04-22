@@ -368,4 +368,26 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/thread" />
+
+    <TextView
+        android:id="@+id/tv_download_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:background="@color/bg_cyan"
+        android:padding="8dp"
+        android:text="downloadservice"
+        app:layout_constraintBottom_toBottomOf="@id/tv_service"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/bg_cyan"
+        android:padding="8dp"
+        android:text="toolbar"
+        app:layout_constraintLeft_toLeftOf="@id/tv_capture"
+        app:layout_constraintTop_toBottomOf="@id/thread" />
 </android.support.constraint.ConstraintLayout>

@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.wf.aloha.R;
 
+import java.io.RandomAccessFile;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

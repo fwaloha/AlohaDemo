@@ -92,6 +92,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     TextView thread;
     @BindView(R.id.tv_service)
     TextView tvService;
+    @BindView(R.id.tv_download_service)
+    TextView tvDownloadService;
+    @BindView(R.id.tv_toolbar)
+    TextView tvToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     @OnClick({R.id.tv_get, R.id.tv_upload, R.id.tv_post, R.id.tv_rxjava, R.id.tv_download, R.id.tv_popup, R.id.tv_material, R.id.tv_super_swipe, R.id.tv_draw_layout, R.id.tv_camera
             , R.id.tv_nav, R.id.tv_viewstub, R.id.tv_test, R.id.tv_drawable, R.id.tv_finger, R.id.tv_kotlin, R.id.tv_catch, R.id.tv_dialog, R.id.tv_attr, R.id.tv_audio
             , R.id.kotlin_recyclerview, R.id.tv_permission, R.id.tv_content_resolver, R.id.tv_notification, R.id.tv_capture, R.id.tv_video, R.id.tv_net, R.id.thread
-        ,R.id.tv_service})
+            , R.id.tv_service, R.id.tv_download_service,R.id.tv_toolbar})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_get:
@@ -275,6 +279,14 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             case R.id.tv_service:
                 Intent intent27 = new Intent(this, ServiceActivity.class);
                 startActivity(intent27);
+                break;
+            case R.id.tv_download_service:
+                Intent intent28 = new Intent(this, DownloadServiceActivity.class);
+                startActivity(intent28);
+                break;
+            case R.id.tv_toolbar:
+                Intent intent29 = new Intent(this, ToolbarActivity.class);
+                startActivity(intent29);
                 break;
         }
     }
