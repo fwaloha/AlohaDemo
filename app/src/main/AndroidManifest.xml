@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.wf.aloha">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -23,17 +24,27 @@
 
     <application
         android:name=".AppRoot"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:resizeableActivity="false"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <activity android:name=".ui.CamActivity"></activity>
+        <activity android:name=".ui.NotiActivity" />
+        <activity android:name=".ui.ResolverTestActivity" />
+        <activity
+            android:name=".ui.MipushTestActivity"
+            android:exported="true"
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.Test3Activity" />
+
         <service
             android:name=".service.AlermService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity android:name=".ui.ToolbarActivity" />
 
@@ -59,7 +70,7 @@
             android:name=".ui.VideoActivity"
             android:configChanges="screenSize|keyboardHidden|orientation" />
         <activity android:name=".ui.CaptureActivity" />
-        <activity android:name=".ui.NotifiActivity"/>
+        <activity android:name=".ui.NotifiActivity" />
 
         <meta-data
             android:name="UMENG_APPKEY"
@@ -67,6 +78,9 @@
         <meta-data
             android:name="UMENG_MESSAGE_SECRET"
             android:value="aa5ae782ba2e5be3c12edbaa23e7dfbd" />
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="appid=100900451" />
 
         <activity android:name=".ui.MainActivity">
             <intent-filter>
@@ -213,6 +227,11 @@
 
         <provider
             android:name=".view.DataProvider"
+            android:authorities="com.wf.aloha.provider"
+            android:enabled="true"
+            android:exported="true" />
+        <provider
+            android:name=".provider.DataProvider"
             android:authorities="com.wf.aloha.provider"
             android:enabled="true"
             android:exported="true" />

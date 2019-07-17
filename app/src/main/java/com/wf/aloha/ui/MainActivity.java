@@ -13,7 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.huawei.android.hms.agent.HMSAgent;
+import com.huawei.hms.support.api.push.HuaweiPush;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.umeng.message.PushAgent;
 import com.wf.aloha.R;
 import com.wf.aloha.utils.LogUtils;
 
@@ -103,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        PushAgent.getInstance(this).onAppStart();
         LogUtils.d("-----mem 应用获取的内存大小", Runtime.getRuntime().maxMemory() + "M");
 
         ActivityManager activityManager = (ActivityManager) this.getSystemService(ACTIVITY_SERVICE);
@@ -111,7 +115,6 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                 LogUtils.d("-----processName", info.processName);
             }
         }
-//        PushAgent.getInstance(this).onAppStart();
 
 //        动态更换icon图标
 //        PackageManager mPM = getPackageManager();
@@ -149,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
             }
         });
+
     }
 
     @OnClick({R.id.tv_get, R.id.tv_upload, R.id.tv_post, R.id.tv_rxjava, R.id.tv_download, R.id.tv_popup, R.id.tv_material, R.id.tv_super_swipe, R.id.tv_draw_layout, R.id.tv_camera
@@ -208,8 +212,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                 startActivity(intent10);
                 break;
             case R.id.tv_test:
-//                Intent intent11 = new Intent(this, TestActivity.class);
-                Intent intent11 = new Intent(this, Test2Activity.class);
+//                Intent intent11 = new Intent(this, Test2Activity.class);
+                Intent intent11 = new Intent(this, CamActivity.class);
                 startActivity(intent11);
                 break;
             case R.id.tv_drawable:

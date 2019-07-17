@@ -28,9 +28,7 @@ public class AlermService extends Service {
                 LogUtils.d("-----alert:"," time"+SystemClock.elapsedRealtime());
             }
         }).start();
-        new Thread(()->{
-            
-        }).start();
+        
         int minite = 6 * 1000;
         Intent intent1 = new Intent(getApplicationContext(), AlermService.class);
         PendingIntent service = PendingIntent.getService(getApplicationContext(), 0, intent1, 0);

@@ -38,7 +38,7 @@ public class FragActivity extends AppCompatActivity implements View.OnClickListe
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.remove(new RightFragment());
         transaction.replace(R.id.frag_right,new LeftFragment());
-//        transaction.addToBackStack(null);
+        transaction.addToBackStack(null);//添加返回键支持
         transaction.commit();
     }
 }

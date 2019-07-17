@@ -6,8 +6,16 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.huawei.hms.api.HuaweiApiClient;
+import com.huawei.hms.support.api.push.HuaweiPush;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.umeng.commonsdk.UMConfigure;
+import com.umeng.message.IUmengRegisterCallback;
+import com.umeng.message.PushAgent;
+
+import org.android.agoo.huawei.HuaWeiRegister;
+import org.android.agoo.xiaomi.MiPushRegistar;
 //import com.umeng.message.IUmengRegisterCallback;
 //import com.umeng.message.PushAgent;
 
@@ -57,7 +65,27 @@ public class AppRoot extends Application {
 //            }
 //        };
 //        mPushAgent.setNotificationClickHandler(notificationClickHandler);
+        initPush();
         registerActivityLifecycleCallbacks();
+    }
+
+    private void initPush() {
+        UMConfigure.init(this,"5940ad6aaed17966cb000895","Umeng",UMConfigure.DEVICE_TYPE_PHONE,"aa5ae782ba2e5be3c12edbaa23e7dfbd");
+        PushAgent mPushAgent = PushAgent.getInstance(this);
+        mPushAgent.register(new IUmengRegisterCallback() {
+            @Override
+            public void onSuccess(String s) {
+                Log.i("device_token","" + s);
+            }
+
+            @Override
+            public void onFailure(String s, String s1) {
+
+            }
+        });
+
+        MiPushRegistar.register(this, "2882303761517614217", "5151761430217");
+        HuaWeiRegister.register(new AppRoot());
     }
 
     private void initCrash() {
